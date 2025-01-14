@@ -5,6 +5,9 @@ load_dotenv()
 
 
 class Settings(BaseSettings):
+    """
+    Configuration class for application settings, including database and JWT secrets, loaded from environment variables.
+    """
     DB_HOST: str
     DB_PORT: int
     DB_USER: str
@@ -27,4 +30,4 @@ class Settings(BaseSettings):
         env_file = ".env"
 
 
-settings = Settings()
+settings: Settings = Settings()

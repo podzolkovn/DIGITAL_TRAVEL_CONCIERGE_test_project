@@ -4,6 +4,9 @@ from pydantic import BaseModel
 
 
 class LoggerConfig(BaseModel):
+    """
+    Configuration class for setting up application logging with customizable formatters, handlers, and loggers.
+    """
     LOGGER_NAME: str = "digital_travel_concierge"
     LOG_FORMAT: str = "%(levelprefix)s | %(asctime)s | %(message)s"
     LOG_LEVEL: str = "DEBUG"
