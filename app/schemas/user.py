@@ -5,6 +5,10 @@ from fastapi_users import schemas
 
 
 class UserRead(schemas.BaseUser[int]):
+    """
+    Schema for reading user data, including additional fields such as
+    `created_at`, `updated_at`, `common_role`, and flags for status.
+    """
     id: int
     email: str
     created_at: datetime
