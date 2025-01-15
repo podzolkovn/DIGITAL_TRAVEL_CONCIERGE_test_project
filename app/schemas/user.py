@@ -1,7 +1,6 @@
 from datetime import datetime
-from typing import Optional
-
 from fastapi_users import schemas
+from pydantic import EmailStr, ConfigDict
 
 
 class UserRead(schemas.BaseUser[int]):
@@ -18,8 +17,10 @@ class UserRead(schemas.BaseUser[int]):
     is_active: bool
     is_superuser: bool
 
+    model_config = ConfigDict()
+
 
 class UserCreate(schemas.BaseUserCreate):
-    email: str
+    email: EmailStr
     password: str
     common_role: int
