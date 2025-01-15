@@ -22,6 +22,8 @@ class Settings(BaseSettings):
 
     SECRET_JWT: str
 
+    MODE: str
+
     @property
     def DB_URL(self) -> str:
         return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
